@@ -11,4 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Agent {
+    private String firstName;
+    private String lastName;
+    private Long code;
 }
