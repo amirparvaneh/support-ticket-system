@@ -15,6 +15,6 @@ spring:
     client:
       config:
         default:
-          connectTimeout: 60000
-          readTimeout: 10000
+          connectTimeout: 60
+          readTimeout: 100
 
