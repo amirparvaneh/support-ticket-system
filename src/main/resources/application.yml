@@ -1,15 +1,13 @@
 spring:
   application:
-    name: support-ticket-system
+    name: ticket
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: support
     password: PASSWORD
-    url: jdbc:mysql://localhost:3306/support
-    name: verde
+    url: jdbc:mysql://localhost:3308/ticket
+    name: support
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-  messages:
-    basename: message
