@@ -19,8 +19,7 @@ public class AgentController {
     private final AgentService agentService;
 
     @GetMapping(value = "/test-feign")
-    public ResponseEntity<BaseResponseDTO> testFeign(){
-        log.info("going to call service");
+    public ResponseEntity<BaseResponseDTO> testFeign(){        log.info("going to call service");
         agentService.callExternalService();
         BaseResponseDTO<Object> hi = BaseResponseDTO.builder().message("hi").build();
         return ResponseEntity.ok(hi);
