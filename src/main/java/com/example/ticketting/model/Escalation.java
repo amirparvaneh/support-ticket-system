@@ -1,27 +1,26 @@
 package com.example.ticketting.model;
 
 
-import com.example.ticketting.model.enums.SenderType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 
-@Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class Message extends BaseEntity{
-    private String message;
-    private LocalDateTime timestamp;
-    @Enumerated(EnumType.STRING)
-    private SenderType senderType; // ENUM: CUSTOMER, AGENT
+@Builder
+@Table
+public class Escalation extends BaseEntity{
+    private LocalDateTime escalationDate;
+    private Integer newResponseTimeLimit;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "support_ticket_id")
     private SupportTicket supportTicket;
 }

@@ -5,10 +5,20 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+import java.util.Set;
+
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Customer {
+@Entity
+public class Customer extends BaseEntity{
     private String code;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String phoneNumber;
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<SupportTicket> supportTickets;
 }
