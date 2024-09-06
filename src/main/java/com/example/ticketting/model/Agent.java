@@ -15,10 +15,12 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Agent extends BaseEntity{
-    private String name;
+public class Agent extends BaseEntity {
+
+    private String firstName;
+    private String lastName;
     private String email;
-    private String phone;
+    private String phoneNumber;
 
     @OneToMany(mappedBy = "currentAgent")
     private Set<SupportTicket> assignedTickets;

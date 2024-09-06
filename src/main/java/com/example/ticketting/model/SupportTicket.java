@@ -29,8 +29,8 @@ public class SupportTicket extends BaseEntity{
     private LocalDateTime lastUpdatedDate;
     private LocalDateTime resolvedDate;
     private LocalDateTime closedDate;
-    private Integer slaResponseTime; // in minutes
-    private Integer escalationReduction; // percentage reduction
+    private Integer slaResponseTime;
+    private Integer escalationReduction;
     private LocalDateTime escalationTimeLimit;
 
     @ManyToOne

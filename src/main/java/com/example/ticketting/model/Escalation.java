@@ -16,7 +16,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 @Entity
-public class Escalation extends BaseEntity{
+public class Escalation extends BaseEntity {
+
     private LocalDateTime escalationDate;
     private Integer newResponseTimeLimit;
 

@@ -13,12 +13,12 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Customer extends BaseEntity{
+public class Customer extends BaseEntity {
     private String code;
     private String firstName;
     private String lastName;
     private String email;
     private String phoneNumber;
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "customer")
     private Set<SupportTicket> supportTickets;
 }

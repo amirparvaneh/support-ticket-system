@@ -19,7 +19,7 @@ public class Message extends BaseEntity{
     private String message;
     private LocalDateTime timestamp;
     @Enumerated(EnumType.STRING)
-    private SenderType senderType; // ENUM: CUSTOMER, AGENT
+    private SenderType senderType;
 
     @ManyToOne
     @JoinColumn(name = "support_ticket_id")
