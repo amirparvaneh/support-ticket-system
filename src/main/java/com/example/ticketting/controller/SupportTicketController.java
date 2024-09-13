@@ -6,5 +6,5 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/tickets")
-public class TicketController {
+public class SupportTicketController {
 }
