@@ -1,8 +1,12 @@
 package com.example.ticketting.service;
 
 
-import org.springframework.stereotype.Service;
+import com.example.ticketting.model.Customer;
+import com.example.ticketting.model.dto.CustomerInputDto;
 
-@Service
+
 public interface CustomerService {
+
+    Customer addNewCustomer(CustomerInputDto customerInputDto);
+
 }

@@ -25,8 +25,6 @@ public class SupportTicket extends BaseEntity{
     private Priority priority;
     @Enumerated(EnumType.STRING)
     private Status status;
-    private LocalDateTime creationDate;
-    private LocalDateTime lastUpdatedDate;
     private LocalDateTime resolvedDate;
     private LocalDateTime closedDate;
     private Integer slaResponseTime;
