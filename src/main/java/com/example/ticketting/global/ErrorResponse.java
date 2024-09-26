@@ -26,6 +26,11 @@ public class ErrorResponse {
         }
     }
 
+    public ErrorResponse(String message, HttpStatus status){
+        this.message = message;
+        this.status = status;
+    }
+
 
     public void setErrorDetail(Object... params) {
         for (Object param : params) {

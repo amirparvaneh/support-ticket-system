@@ -8,10 +8,9 @@ import com.example.ticketting.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/customers")
@@ -26,5 +25,30 @@ public class CustomerController {
         return ResponseEntity.status(HttpStatus.OK).body(BaseResponseDTO.builder()
                 .message("customer have been created")
                 .result(newCustomer).build());
+    }
+
+
+    @GetMapping(value = "/{code}")
+    public ResponseEntity<BaseResponseDTO> findCustomerCode(@PathVariable(value = "code") String code){
+        customerService.findCustomerByCode(code);
+
+    }
+
+
+    @GetMapping(value = "/all")
+    public ResponseEntity<BaseResponseDTO> getAllCustomer() {
+        List<Customer> allCustomer = customerService.findAllCustomer();
+        return ResponseEntity.status(HttpStatus.OK).body(BaseResponseDTO
+                .builder()
+                .message("the whole data")
+                .result(allCustomer)
+                .build());
+    }
+
+    @DeleteMapping(value = "/{code}")
+    public ResponseEntity<BaseResponseDTO> deleteCustomer(@PathVariable String code) {
+        customerService.deleteCustomer(code);
+        return ResponseEntity.status(HttpStatus.OK).body(BaseResponseDTO.builder()
+                .message("customer have been deleted with code " + code).build());
     }
 }
